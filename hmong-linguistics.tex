@@ -1,0 +1,961 @@
+\documentclass[11pt,oneside,DIV=9]{scrartcl}
+\KOMAoptions{paper=letter, parskip=half}
+
+\usepackage{quoting}
+\quotingsetup{indentfirst=false, vskip=0pt}
+
+%%% FONTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}
+\setmainfont{Libertinus Serif}
+\setsansfont{Lato}
+
+%%% HEADER & FOOTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{scrlayer-scrpage}
+\ofoot*{\tiny Last updated: \today}
+
+%%% TITLES AND  HEADINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RedeclareSectionCommands[font={\rmfamily\mdseries\scshape\normalsize}, runin=on, beforeskip=0pt, afterskip=0.1375in, indent=-1.1375in]{paragraph,subparagraph}
+\let\textitdparagraph\paragraph%
+\renewcommand{\paragraph}[1]{\textitdparagraph[#1]{\makebox[1in][c]{#1:}}}
+
+%%% BIBLIOGRAPHY SETUP AND MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks, allcolors=BlueViolet]{hyperref}
+\usepackage[natbib, backend=biber, style=unified, sorting=nyt, maxcitenames=3, isbn=false]{biblatex}
+\addbibresource{hmong-linguistics.bib}
+
+\DeclareCiteCommand{\fullcite}
+  {\usebibmacro{prenote}}% Precode
+  {\usedriver
+     {\defcounter{minnames}{6}%
+      \defcounter{maxnames}{6}}
+     {\thefield{entrytype}}}% Loopcode
+  {\multicitedelim} % Sepcode
+  {\usebibmacro{postnote}}
+
+\newcommand{\note}[1]{\begin{quoting}\small\noindent#1\end{quoting}}
+
+\DeclareFieldFormat{doi}{\href{https://doi.org/#1}{\ttfamily doi\addcolon\thinspace\nolinkurl{#1}}}
+
+\AtEveryCitekey{%
+	\clearname{editor}%
+	\clearfield{urldate}%
+	}
+
+\AtBeginBibliography{\footnotesize}
+
+\newcommand{\see}[1]{See \hyperlink{#1}{\citeauthor{#1} \citeyearpar{#1}}.\par}
+
+\newcommand{\refonly}[1]{\hangindent=2.5em\fullcite{#1}\medskip\par}
+
+\newenvironment{entry}[1]{\hangindent=2.5em\hypertarget{#1}{\fullcite{#1}}\quoting\small}{\endquoting\medskip\par}
+
+
+%%% METADATA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Hmong linguistics research}
+\subtitle{An annotated bibliography}
+\author{William Johnston} 
+\date{\normalsize\href{williamjohnston.github.io}{williamjohnston.github.io}}
+
+%%% MAIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\raggedbottom
+
+\noindent This is a guide to published research on Hmong linguistics, written for students, teachers, researchers, and anyone else who wants to become more familiar with the study of Hmong grammar. 
+
+I focus here on White Hmong (Hmoob Dawb), Green Mong (Moob Ntshuab), and Mong Leng (Moob Leeg). A few works on more distantly-related languages (for example: Iu Mien) are included where they seem particularly relevant. 
+
+This bibliography is still in progress, and some relevant works might be missing. For works/topics not included here, please consult the following sources:
+
+\begin{itemize}
+\item For a more comprehensive list, including works on Hmong culture, language teaching, and language revitalization, see \href{https://www.hmongstudiesjournal.org/the-hmong-language.html}{this bibliography} hosted by the Hmong Studies Journal and compiled by Mark E.\ Pfeifer. 
+\item	For Mandarin-language publications, see the \href{https://sites.google.com/view/anniexie/language-documentation}{working bibliography} compiled by \href{https://sites.google.com/view/anniexie/about}{Xuehan Annie Xie}.
+\item For a broader overview of the linguistics of the Hmong-Mien family, see \href{https://www.oxfordbibliographies.com/view/document/obo-9780199772810/obo-9780199772810-0173.xml}{the Oxford Bibliographies page} (\href{https://williamjohnston.github.io/files/Mortensen-2014.pdf}{\textsc{pdf}}) compiled by \href{https://www.cs.cmu.edu/~dmortens/}{David Mortensen}.
+\end{itemize}
+
+If this bibliography was useful to you, if you can't find some of the sources mentioned, or if you have any questions or comments, please let me know. My contact information is on \href{williamjohnston.github.io}{my web site}.
+
+\newpage
+\tableofcontents
+\newpage 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Reference works}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Grammars and overviews}
+
+To quickly get acquainted with the basics of Hmong grammar, I recommend Jarkey 2015a and Mortensen 2019. For language learners, Jaisser 1995 may be a better starting point.\medskip
+
+\paragraph{Books}
+
+\begin{entry}{White2025} A recent book-length grammar of White Hmong and Green Mong. Contains much useful data, but is written in a less approachable style than some other sources mentioned here.\end{entry}
+
+\begin{entry}{Jaisser1995} An early Hmong language textbook, which also provides a basic description of the language. \end{entry}
+
+\begin{entry}{Lyman1979} An early grammar of Green Mong. The author uses a non-standard writing system and idiosyncratic terminology, making it somewhat difficult to follow. \end{entry}
+
+\begin{entry}{Mottin1978} The most widely cited description of the White Hmong language. Though published in French, it contains many, many Hmong examples, and is easy to follow even for those who are not French speakers. \end{entry}
+
+%\paragraph{Theses}
+%\begin{entry}{Taweesak1984}\end{entry}
+
+\paragraph{Articles}
+
+\begin{entry}{Mortensen2019} A chapter-length description of Green Mong grammar, with concise descriptions of most fundamental topics. \end{entry}
+
+\begin{entry}{Mortensen2017} An overview of the Hmong--Mien family (usually called Miao--Yao by Chinese scholars), characteristic features shared by its languages, and its possible relationships to other language families of East and Southeast Asia. \end{entry}
+
+\begin{entry}{Jarkey2015ch1} The first chapter of Nerida Jarkey's book on Hmong serial verbs provides a brief yet thorough overview of White Hmong grammar. \end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dictionaries}
+
+\paragraph{Books}
+\refonly{XiongEtAl1983}
+\refonly{Yang1980}
+\refonly{Heimbach1979}
+\refonly{Bertrais1979}
+
+\paragraph{Web}
+\refonly{Xiong2011}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Corpora and vocabularies}
+
+\paragraph{Web}
+
+\begin{entry}{UMNCorpus} A collection of Hmong texts and transcribed audiovisual files (including stories, website contents, social media posts, and academic writings) annotated with glosses (word-for-word translations) and full-sentence translations in English. Audiovisual files associated with transcribed texts are also available. \end{entry}
+
+\begin{entry}{SCHCorpus} A digital corpus compiled from postings to the soc.culture.hmong (SCH) Usenet group \end{entry}
+
+\begin{entry}{Ratliff2009} A database of words in Hmoob Dawb (White Hmong) categorized according to language of origin. \end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Syntax}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Nouns, pronouns, demonstratives, classifiers, and quantifiers}
+
+%Classifiers are an important topic in Hmong grammar. \citet{SakuragiFuller2013} provide an experimental look into what Hmong classifiers actually describe, and \citet{Bisang1993} and \citet{Ratliff1991} both discuss how to distinguish classifiers from other grammatical words. 
+
+%Hmong demonstratives undergo a famous tone change (\ol{ntawm} `that' $\to$ \ol{ntawd} `that one') discussed by \citet{Ratliff1997}.
+
+%Like other Southeast Asian languages, Hmong treats certain proper names and kinship terms as if they were pronouns. \citet{Mortensen2004} and \citet{Bansal2021} discuss some aspects of this behavior. 
+
+\paragraph{Articles}
+
+\begin{entry}{SakuragiFuller2013} A study examining the factors that affect Hmong speakers' choice of classifiers. The results suggest that classifiers are associated with both particular shapes and particular functions. In some cases, Hmong speakers' preferences change, depending on whether they focus on the shape of the noun in question, or on its function.\end{entry}
+
+%\begin{entry}{Gerner2009}\end{entry}
+%Gerner, M. (2009). “Deictic features of demonstratives: A typological survey with special reference to the Miao group.” Canadian Journal of Linguistics, 54(1), 43-90.
+
+%\begin{entry}{GernerBisang2009}\end{entry}
+%Gerner, M. & W. Bisang (2009). “Inflectional Classifiers in Weining Ahmao: Mirror of the History of a people.” Folia Linguistica Historica 30(1/2), 183-218. Societas Linguistica Europaea.
+
+%\begin{entry}{Bisang1999}\end{entry}
+%Classifiers in East and Southeast Asian languages: Counting and beyond \parencite{Bisang1999}. A study of noun classifiers in East and Southeast Asian languages, including Hmong.\begin{entry}{Ratliff1997}\end{entry}
+
+\begin{entry}{Ratliff1997} Discusses the demonstrative \textit{ko} `that (near you)', which has been omitted from several other works, and situates \textit{ko} within the full demonstrative system of White Hmong (which is somewhat unusual among Southeast Asian languages). \end{entry}
+
+\begin{entry}{Bisang1993} Argues that some ``classifiers'' in Hmong are instead quantifiers, measure words, or class nouns. Offers a contrasting view of the ``double classifier constraint'' discussed by Ratliff (1991) and an explanation for the ``referential salience'' analysis of Riddle (1989). \end{entry}
+
+\begin{entry}{Ratliff1991} Argues that in Hmong ``double classifier'' constructions, for example \textit{cov phau ntawv}, the second ``classifier'' and the head noun are in fact a compound noun. Ratliff relates this to a broader pattern of syntactic flexibility in Hmong. \end{entry}
+
+%\begin{entry}{Jaisser1987}\end{entry}
+
+%\paragraph{Theses}
+%\begin{entry}{Melton1991}\end{entry}
+%Melton, J.B. (1991). An Analysis of Hmong Noun Classifiers. Master’s Thesis, San Diego State University.
+
+%\begin{entry}{Donnelly1982}\end{entry}
+%Donnelly, N.D. (1982). Preliminary Study of Noun Classifier Use in the Hmong Language. Department of Anthropology, University of Washington (Unpublished).
+
+%Nathan M. White: Classifiers in Hmong
+
+\paragraph{Proceedings}
+
+\begin{entry}{SaeleeNie2024} Analyzes the differences between Sinitic and non-Sinitic adjectives in Iu Mien, which (among other contrasts) appear on different sides of the noun they describe. Highly similar behavior is found in Hmong.\end{entry}
+
+%\begin{entry}{Riddle1989}\end{entry}
+
+\begin{entry}{Ratliff1992a} Discusses associative pronouns in Hmong (called ``expansion pronouns'' in this text), which combine a noun (phrase) with a pronoun, to describe a larger group containing that noun. For example, \textit{Nplias nkawd} (= Nplias \textsc{2.dual}) describes a group of two people, of whom Nplias is one.\end{entry}
+
+\paragraph{Unpublished}
+
+\begin{entry}{Bansal2021} An unpublished master's paper that explores binding in Hmong (focusing on White Hmong). Bansal finds slightly different behavior than \citet{Mortensen2004} finds in Green Mong, and compares the two dialects to Thai and Vietnamese, respectively.\end{entry}
+
+\begin{entry}{Mortensen2004} Explores an unusual phenomenon in Hmong (focusing on Green Mong) in which proper names can be anaphorically bound as if they were pronouns. Mortensen also discusses the apparent ``competition'' between proper names, full pronouns, kinship terms, null pronouns, and `self' anaphors.\end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Verbs and the verb phrase}
+%Neng Vang's paper on tau
+\paragraph{Books}
+
+\begin{entry}{Jarkey2015} The most thorough description of serial verbs in Hmong, and an excellent reference on other areas of Hmong grammar. Supersedes \citealt{Jarkey1991} and \citealt{Jarkey2010}, and contains a much more thorough and detailed description than most older sources (including \citealt{Owensby1986, Riddle1990, Riddle1990a, Bisang1991, Harriehausen-Muhlbauer1992}).\end{entry}
+	%Also: Li Harriehausen and Litton: Iconicity: A view from Green Hmong serial verbs
+
+\paragraph{Theses}
+
+\begin{entry}{JohnstonDiss} A formal investigation of serial verb constructions in Hmong, which compares them to similar grammatical constructions found in other languages. This thesis mainly addresses: (i) direct and indirect causatives, (ii) prepositions and motion events, and (iii) how Hmong describes events that are fully completed (a.k.a.\ culminating, telic, or bounded events). Supersedes \citealt{JohnstonWCCFL42, JohnstonGLOWAsia14, JohnstonWCCFL41}.\end{entry}
+
+%\begin{entry}{Meister2010}\end{entry}
+
+\paragraph{Articles}
+
+\begin{entry}{Jarkey2004} Discusses the ways in which Hmong represents the attainment of a goal (i.e., the full completion of an event). Similar issues are discussed in \citet{Jarkey2015}.\end{entry}
+
+%Jaisser, A. (1990). “Delivering an Introduction to Psycho-Collocations with SIAB in White Hmong.” Linguistics of the Tibeto-Burman Area 13 (Spring 1990): 159-178.
+
+%SimpsonEtAl2011 - relevant?
+
+\begin{entry}{Riddle1989a} Discusses several classes of serial verb construction in White Hmong. Although later works (see Jarkey 2015) cast doubt on some of Riddle's conclusions, this includes useful discussion of ``instrumental'' verbs that have not received much attention elsewhere. \end{entry}
+
+\paragraph{Proceedings}
+
+\begin{entry}{CreswellSnyder2000} Describes two passive-like constructions in Hmong, neither of which demotes the agent (as expected in typical passive constructions). Those formed with \textit{raug} `hit' or \textit{mag} `trap' appear to involve verb phrase embedding, while those formed with \textit{yog} `to be' are a copular construction.\end{entry}
+
+%\begin{entry}{Clark1982a}\end{entry}
+%
+%\begin{entry}{Clark1982} \end{entry}
+
+%Fuller, J.W. (1985). “On the Passive Construction in Hmong.” Minnesota Papers in Linguistics and Philosophy of Language 10 (April 1985): 51-65.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tense, aspect, and mood}
+
+%See2015 - exists?
+%Ginsburg2019 - exists?
+%Nathan M. White: Class properties of modality-marking words in White Hmong
+
+\paragraph{Theses}
+%Thao, N. (2015). An exploration of Hmong lexical adverbs, aspects, and moods.  M.A. Thesis, California State University, Fresno.  
+\begin{entry}{White2014} A descriptive overview of various grammatical markers in Hmong, including tense and aspect marking, aspectual verbs, mood/modality, certainty markers, and other adverbs. \end{entry}
+
+\paragraph{Articles}
+\begin{entry}{Li1991} A fine-grained examination of aspect markers in Green Mong, including \textit{tau} (telic or ``attainment'' marker), \textit{lawm} (\textsc{perfect}), and \textit{taabtom} (\textsc{progressive}). Li also discusses the role of \textit{yuav} (\textsc{future} or \textsc{irrealis}). \end{entry}
+
+\paragraph{Presentations}
+\begin{entry}{JohnstonSoh2024} A conference presentation on two puzzles related to the choice and position of Hmong complementizers in control constructions. Argues that the complementizers \textit{kom} and \textit{(hais) tias kom} mark non-finite clauses while \textit{(hais) tias} marks finite clauses (i.e., clauses with tense).\end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complementation, coordination, and clausal embedding}
+
+%Mortensen 2010 - exists?
+
+\paragraph{Theses}
+\begin{entry}{Jaisser1984} A master's thesis on complementation in Hmong, including discussion of complementizers \textit{(hais) tias} and \textit{kom}, the verb \textit{ua} `make', and several perception verbs \textit{hnov} `hear', \textit{pom} `see', and \textit{mloog} `listen'. \end{entry}
+
+\paragraph{Articles}
+\begin{entry}{Sposato2012} An overview of relative clauses in Xong, which take a surprising number of different forms.\end{entry}
+\begin{entry}{Jarkey2006} Discusses several types of complement clause and the verbs that introduce them, with particular focus on the choice of complementizer: \textit{(hais) tias}, \textit{kom}, \textit{tias kom}, or $\emptyset$. \end{entry}
+\begin{entry}{Mortensen2003} Discusses the syntax, semantics, and morphology of coordinate compounds (e.g.: \textit{caij-nyoog} `time-time' = `time'; \textit{muag-nug} `brother-sister' = `brother and sister') and the four-word phrases sometimes called ``elaborate expressions'' (e.g.: \textit{txiv-maab-txiv-ntoo} `fruit-vine-fruit-tree' = `fruit'; \textit{kawm-txuj-kawm-ci} `learn-art-learn-art' = `to become educated'). \end{entry}
+\begin{entry}{Riddle1993} A brief discussion of relative clauses in Hmong.\end{entry}
+\begin{entry}{Li1989} Argues that the clausal conjunction \textit{huas} is a switch-reference marker, used when the subjects of two clauses differ, and the conjunction \textit{hab} is semantically-neutral and used in same-subject contexts. \end{entry}
+
+\paragraph{Proceedings}
+\begin{entry}{Riddle1992} Presents data on the discourse function of the White Hmong relative clause marker \textit{uas}, which is argued to specify or restrict the reference of the relative clause. Does not discuss the status of \textit{uas} as a complementizer. \end{entry}
+%Also Riddle 1993
+\begin{entry}{Clark1988} Argues that the conjunction \textit{los} has an inchoative meaning, which allows conjunctions to function as topicalizers.\end{entry}
+%Also Clark 1992, Clark1985a
+
+\paragraph{Presentations}
+\see{JohnstonSoh2024}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Spatial language: location, direction, and deixis}
+
+\paragraph{Theses}
+\see{JohnstonDiss}
+
+\paragraph{Articles}
+
+\begin{entry}{JohnstonPathPreds} Discusses directed motion predicates in Hmong. On the basis of comparisons with other languages, Johnston argues that motion verbs in Hmong are derived from prepositions. (Builds on data and observations originally from \citet{Clark1979,Clark1980a,Clark1980b} and \hyperlink{Jarkey2015}{Jarkey (2015)}. \citet{JohnstonLeung2025} extend this approach to other languages.)\end{entry}
+
+\begin{entry}{Taguchi2019} A study of two motion verbs in Lan Hmyo (West Hmongic): \textit{luB} `come (home)' and \textit{ðaA} `come'. The same contrast is found in Hmong (\textit{luB} = Hmong \textit{los}/\textit{lus}, \textit{ðaA} = Hmong \textit{tuaj}). \end{entry}
+
+\begin{entry}{Clark2000} Examines the three-way proximal-medial-distal deictic contrast in Hmong, and argues that this contrast is ``prelinguistic'' and also found in animal behavior. \end{entry}
+
+\paragraph{Proceedings}
+
+\see{Ratliff1992a}
+\begin{entry}{Ratliff1990} Discusses ``spatial deictics'' (or locative prepositions) in Hmong.\end{entry}
+
+%\paragraph{Presentations}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Topics, questions, and discourse particles}
+
+%Somruedee Dej-amorn 2006 paper
+%Thao et al 2020
+
+%Fuller, J.W. (1985). “Zero Anaphora and Topic Prominence in Hmong.” In the Hmong in Transition, ed. by G.L.
+%Hendricks, B.T. Downing, and A.S. Deinard, 261-277.
+
+\paragraph{Theses}
+
+\begin{entry}{Dej-amorn2006} The most thorough reference on discourse particles and other sentence-final particles in Hmong. (Parts of this thesis appear as \citealt{Dej-amorn2004,Dej-amorn2006a}. Supersedes \citealt{Bleske2003}.)\end{entry}
+
+\begin{entry}{Fuller1985} A master's thesis exploring the topic--comment structure of Hmong sentences, the topic markers \textit{mas}, \textit{ne}, and \textit{ces}, and the relationship between topics and subjects in Hmong grammar. (Published in book form as \citealt{Fuller1988}---though the digitized thesis is much easier to find these days. An article-length excerpt appeared as \citealt{Fuller1987}.) \end{entry}
+
+\paragraph{Articles}
+
+\begin{entry}{Clark1985} Discusses yes/no questions in ten Southeast Asian languages. Hmong shows two uncommon features: it uses ``V-not-V'' questions more often (for example, \textit{koj mus (los) tsis mus?} = ``you go (or) not go?''), and the question word \textit{puas} precedes the verb rather than following it. \end{entry}
+
+\paragraph{Proceedings}
+\begin{entry}{Jaisser1992} Brief discussion of two Hmong discourse particles. \end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Morphology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Books}
+\begin{entry}{Ratliff1992} The definitive book on tone in Hmong. Ratliff addresses tone sandhi, tonally-derived classes of words, and tonal sound-symbolism (onomatopoeia or ``expressives''), as well as the way tone relates to the syntax, semantics, and lexicon in these phenomena. (Related works include: \citealt{Ratliff1986,Ratliff1987,Ratliff1997})\end{entry}
+
+%\paragraph{Articles}
+%\begin{entry}{White2021}\end{entry}
+%\begin{entry}{White2020}\end{entry}
+
+\paragraph{Proceedings}
+\begin{entry}{Ratliff1992b} Describes an unusual split in the tone system of Shimen Hmong.\end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Phonetics and phonology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To come!
+
+%%mortensen2004 - exists?
+%
+%\paragraph{Theses}
+%\begin{entry}{Huffman1985}\end{entry}
+%
+%\paragraph{Articles}
+%\begin{entry}{GarellekEtAl2013}\end{entry}
+%\begin{entry}{EspositoKhan2012}\end{entry}
+%\begin{entry}{CastroEtAl2012}\end{entry}
+%\begin{entry}{CastroGu2010}\end{entry}
+%\begin{entry}{FulopGolston2008}\end{entry}
+%\begin{entry}{AndruskiRatliff2000}\end{entry}
+%\begin{entry}{Jarkey1987}\end{entry}
+%\begin{entry}{Huffman1987}\end{entry}
+%
+%\paragraph{Proceedings}
+%\begin{entry}{Sands2003}\end{entry}
+%\begin{entry}{Macken2002}\end{entry}
+%\begin{entry}{GolstonYang2001}\end{entry}
+%\begin{entry}{Downer1967}\end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Semantics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Very little work exists on the semantics of Hmong. Some works that may be relevant (to a greater or lesser extent) are included here.
+
+\paragraph{Books}
+\see{Ratliff1992}
+
+\paragraph{Theses}
+\see{JohnstonDiss}
+
+\paragraph{Articles}
+\begin{entry}{Riddle1999} Discusses metaphorical language in Hmong.\end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Historical linguistics, typology, and varieties of Hmong}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Books}
+\begin{entry}{Ratliff2010} The definitive work on the history of the Hmong--Mien family. %Ratliff synthesizes many earlier works, including \citealt{}.
+\end{entry}
+\begin{entry}{Enfield2003} Discusses a common pattern among Southeast Asian languages, where a single word serves all of the following functions: (1) a verb meaning `get, acquire, attain', (2) an aspect marker associated with completion, (3) a possibility modal meaning `can, be able to', and (4) an introducer of ``descriptive complements''. Contains a significant amount of data on Hmong \textit{tau}. \end{entry}
+%\begin{entry}{Niederer1998}\end{entry}
+%\begin{entry}{Peiros1998}\end{entry}
+
+\paragraph{Articles}
+\begin{entry}{Enfield2017} A survey of typological properties of the languages of the mainland Southeast Asia area, covering over 600 languages from five families.\end{entry}
+%\begin{entry}{Sposato2014}\end{entry}
+%\begin{entry}{Gvozdanovic1999}\end{entry}
+%\begin{entry}{Ratliff1994}\end{entry}
+%\begin{entry}{Clark1989}\end{entry}
+
+\paragraph{Proceedings}
+\begin{entry}{Ly2019} Describes the three most commonly-spoken varieties of Hmong in the diaspora---White Hmong/Hmoob Dawb, Green Mong/Moob Njua, and Mong Leng/Moog Leeg---and the features that set them apart. (This is particularly useful given that many sources treat Green Mong and Mong Leng as a single variety.)\end{entry}
+
+%\begin{entry}{Taguchi2013}\end{entry}
+%\begin{entry}{Ratliff2009a}\end{entry}
+%\begin{entry}{Taguchi2008}\end{entry}
+
+%%% Probably cited in Ratliff 2010
+%\begin{entry}{Niederer2004}\end{entry}
+%\begin{entry}{Kosaka2002}\end{entry}
+%\begin{entry}{Johnson2002}\end{entry}
+%\begin{entry}{Ratliff1998}\end{entry}
+%\begin{entry}{Sagart1995}\end{entry}
+%\begin{entry}{HaudricourtStrecker1991}\end{entry}
+%\begin{entry}{Strecker1987}\end{entry}
+%\begin{entry}{Benedict1975}\end{entry}
+%\begin{entry}{Purnell1970}\end{entry}
+%\begin{entry}{Zide1966}\end{entry}
+%\begin{entry}{Chang1972}\end{entry}
+%\begin{entry}{Chang1953}\end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sociolinguistics and discourse studies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Theses}
+%\begin{entry}{Kaiser2011}\end{entry}
+\refonly{Kaiser2011}
+
+\paragraph{Articles}
+%\begin{entry}{Stanford2010a}\end{entry}
+%\begin{entry}{Stanford2010}\end{entry}
+%\begin{entry}{Burt2010}\end{entry}
+\refonly{Stanford2010a}
+\refonly{Stanford2010}
+\refonly{Burt2010}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Writing systems}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Books}
+%\begin{entry}{SmalleyEtAl1990}\end{entry}
+\refonly{SmalleyEtAl1990}
+
+\paragraph{Articles}
+\refonly{Ly2020}
+\refonly{SmalleyWimuttikosol1998}
+\refonly{Smalley1976}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Textual sources}
+%\begin{entry}{RueyKuan1962}\end{entry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Uncategorized}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{entry}{McLaughlinEtAl2017}\end{entry}
+%\begin{entry}{Packer2023}\end{entry}
+%\begin{entry}{Birnschein2019}\end{entry}
+%\begin{entry}{Pedersen1986}\end{entry}
+%\begin{entry}{Pedersen1982}\end{entry}
+%\begin{entry}{TappEtAl2004}\end{entry}
+%\begin{entry}{Clark1978a}\end{entry}
+%\begin{entry}{Yang1998}\end{entry}
+%\begin{entry}{Culas2009}\end{entry}
+%\begin{entry}{Mortensen2014}\end{entry}
+%\begin{entry}{Ratliff2003}\end{entry}
+%\begin{entry}{LewisYang2012}\end{entry}
+%Hendricks et al 1986 - contains a number of sources
+%Downing & Olney - contains a number of sources
+
+%Bruhn 2006-2007 - exist?
+
+%Lyman 1987, 1988
+
+%Mortensen 2000 - exists?
+
+%Guthrie, S. (1981). Some Observations on Language Universals and Promononialization in English and Hmong.
+%(Unpublished).
+
+%Clark, Marybeth & Amara Prasithrathsint. 1985. Synchronic lexical derivation in Southeast Asian languages. In Ratanakul, Suriya, et al. (eds.), Southeast Asian Linguistic Studies Presented to André-G. Haudricourt, 34-81. Institute of Language and Culture for Rural Development, Mahidol University.
+
+%Bisang, Walter. 1996. Areal typology and grammaticalization: Processes of grammaticalization based on nouns and verbs in East and mainland South East Asian languages. Studies in Language 20(3). 519-597.
+
+%Nathan White: ‘Affixation in an isolating language? Wordhood and the case of Hmong’ (talk at SEALS 28)
+
+%Bruhn (2007) LF Wh-Movement in Mong Leng: this is course final paper, not published
+	%island sensitivity
+
+
+\clearpage 
+\printbibliography[title={All references, by author}]
+\end{document}
+
+
+%The Hmong Language
+%
+%Compiled by Mark E. Pfeifer, PhD
+%
+%Cushing-Leubner, J., Xiong-Lor, V., Vang, T. & P. Yang (28 Apr 2026): Translanguaging dialects: claiming language sovereignty in Hmong language reclamation, The Language Learning Journal, DOI: 10.1080/09571736.2026.2651782
+%
+%White, N.N. (2024). "Quantifier float in Hmong." Folia Linguistica. https://doi.org/10.1515/flin-2024-2041.
+% 
+%Garallek, M. and C.M. Esposito. (2023). “Phonetics of White Hmong Vowel and Tonal Contrasts.” Journal of the International Phonetic Association. 53(1).
+%
+%White, N. (2022). "The Hmong Medical Corpus: A biomedical corpus for a minority language." Language Resources and Evaluation 56: 1315-1332. 
+%
+%White, N. (2021). "Grammaticalization and phonological reidentification in White Hmong." Studies in Language, 46(1): 258-284.
+%
+%White, N.W.. (2021). "Prehistory of Verbal Markers in Hmong: What Can We Say?" Studia Linguistica 75(2)  345–374.
+%
+%Ly, C. (2020). "An Explanation of the Logic of Hmong RPA." Hmong Studies Journal, 21: 1-15. 
+%
+%Michaud, J. (2020). "The Art of Not Being Scripted So Much The Politics of Writing Hmong Language(s)." Current Anthropology, 61(2).
+%
+%Thao, Y., Yang, C. and C. Ly. (2020). "Hidden Melodies of the Hmong Language: The Rhythmers." Hmong Studies Journal, 21: 1-17. ​
+%
+%Birnschein, K.A. (2019). A Text-Based Exploration of Topics in White Hmong Grammar. MA Thesis, University of North Dakota. 
+%
+%Xiong, K.Y. (2019). The Disappearing Hmong Language: The Effects of English on Hmong Children's Heritage Language and Their Relationship With Their Parents. EdD Dissertation, University of Colorado, Boulder.
+%
+%Xiong, X. (2018). Hmoobness: Hmoob (Hmong) Youth and Their Perceptions of Hmoob Language in a Small Town in the Midwest. PhD Dissertation, University of Minnesota. 
+%
+%Thao, N. (2015). An exploration of Hmong lexical adverbs, aspects, and moods.  M.A. Thesis, California State University, Fresno.  
+%
+%Xiong-Lor, V. (2015). Current Hmong Perceptions of their Speaking, Reading, and Writing Ability and Cultural Values as Related to Language and Cultural Maintenance.  E.d.D Dissertation, California State University, Fresno. 
+%
+%Sposato, A. (2014). "Word order in Miao-Yao (Hmong-Mien)." Linguistic Typology 18(1): 83-140.
+%
+%White, N.M. (2014). Non-Spatial Setting in White Hmong. MA Thesis. Trinity Western University. 
+%
+%Mortenson, D.R. (2013). "Tonally conditioned vowel raising in Shuijingping Mang." Journal of East Asian Linguistics  22:189–216.
+%
+%Nibbs, F. (2013). "Kinship at the intersection of lineage and linguistics: a study of Hmong relatedness in Western contexts." Language and Intercultual communication. 1-15.
+%
+%Sakuragi, T. and J.W. Fuller. (2013). "Shape and Function in Hmong Classifier Choices." Journal of Psycholinguistic Research, 42:349–361.
+%
+%Carveth, V. (2012). Explorations in the Phonological Reconstruction of Proto-Qiandong-Hmongic Onsets. MA Thesis, University of Calgary.
+%
+%Esposito, C.M. (2012). "An acoustic and electroglottographic study of White Hmong tone and phonation." Journal of
+%Phonetics 40: 466-476.
+%
+%Esposito, C.M. and S.D. Khan. (2012). "Contrastive breathiness across consonants and vowels; A Comparative
+%Study of Gujarati and White Hmong." Journal of the International Phonetic Association 42(2): 123-143."
+%
+%Garellek, M. (2012). "The timing and sequencing of coarticulated non-modal phonation in English and White
+%Hmong." Journal of Phonetics, 40: 152-161.
+%
+%Sakuragi, T. and J.W. Fuller. (2012). "Shape and Function in Hmong Classifier Choices." Journal of Psycholinguistic Research. Epub Ahead of Print.
+%
+%Vang, M. (2012). Hmong heritage language learners: A phenomenological approach. PhD Dissertation, University of Wisconsin-Milwaukee.
+%
+%Kaiser, E.A. (2011). Sociophonetics of Hmong American English in Minnesota. PhD Dissertation, University of
+%Minnesota.
+%
+%Burt, S.M. (2010). The Hmong Language in Wisconsin: Language Shift and Pragmatic Change. Lewiston, NY: Edwin Mellen Press.
+%
+%Castro, A. & G. Chawen. 2010. "Phonological innovation among Hmong dialects of Wenshan." Journal of the
+%Southeast Asian Linguistics Society 3.1:1-39.
+%
+%Ito, R. (2010). “Accommodation to the Local Majority Norm by Hmong Americans in the Twin Cities,
+%Minnesota.” American Speech 85(2): 141-162.
+%
+%Gerner, M. & W. Bisang (2010). “Classifiers declinations in an isolating language: On a rarity in Weining Ahmao.”
+%Language and Linguistics 11(3), 576-623. Taibei: Academia Sinica.
+%
+%Ratliff, M. 2010. Hmong-Mien Language History. Canberra: The Australian National University, Pacific Linguistics.
+%
+%Ratliff, M. (2010). Meaningful Tone: A Study of Tonal Morphology in Compounds, Form Classes and Expressive
+%Phases in White Hmong. Dekalb, IL: Northern Illinois Press.
+%
+%Stanford, J.N. (2010). “The Role of Marriage in Linguistic Contact and Variation: Two Hmong Dialects
+%in Texas.” Journal of Sociolinguistics 14(1): 89-115.
+%
+%Stanford, J.N. (2010). “Gender, Generations, and Nations: An Experiment in Hmong American
+%Discourse and Sociophonetics.” Language and Communication 30: 285-296.
+%
+%Burt, S.M. (2009). “Naming, Re-Naming and Self-Naming Among Hmong-Americans.” Names 57(4): 236-245.
+%
+%Gerner, M. (2009). “Deictic features of demonstratives: A typological survey with special reference to the Miao
+%group.” Canadian Journal of Linguistics, 54(1), 43-90.
+%
+%Gerner, M. & W. Bisang (2009). “Inflectional Classifiers in Weining Ahmao: Mirror of the History of a people.” Folia
+%Linguistica Historica 30(1/2), 183-218. Societas Linguistica Europaea.
+%
+%Ratliff, M. 2009. “Loanwords in White Hmong”. In Loanwords in the World's Languages: A Comparative Handbook
+%edited by Martin Haspelmath and Uri Tadmor, 638–658. Berlin: Mouton de Gruyter.
+%
+%Ratliff, M. 2009. “White Hmong vocabulary”. In World Loanword Database, edited by Martin Haspelmath and Uri
+%Tadmor, 1,292 entries. Munich: Max Planck Digital Library.
+%
+%Gerner, M. & W. Bisang (2008). “Inflectional Speaker-Role Classifiers in Weining Ahmao.” Journal of Pragmatics, 40(4), 719-732.
+%
+%Jarkey, N. (2006). “Complement Clause Types and Complementation Strategy in White Hmong.” In Robert M.W.
+%Dixon and A.I.U. Aikhenval’d, Eds. Complementation: A Cross-Linguistic Typology. New York: Oxford University Press.
+%
+%Thomas Amis Lyman. (2004). "A Note on the Ethno-Semantics of Proverb Usage in Mong Njua (Green Hmong)." In
+%Tapp, N., Michaud, J., Culas, C., and Lee, G.Y. (Editors). Hmong/Miao in Asia. Chiang Mai, Thailand: Silkworm
+%Books, pp. 167-178.
+%
+%Jarkey, Nerida. (2004). “Process and Goal in White Hmong.” In The Hmong of Australia: Culture and Diaspora. Eds. Nicholas Tapp and Gary Yia Lee. Canberra, Australia: Pandanus Books, Research School of Pacific and Asian Studies, The Australian National University, 175-190.
+%
+%Barbara Niederer. (2004). "Pa-hng and the Classification of the Hmong-Mien Languages." In Tapp, N., Michaud, J.,
+%Culas, C., and Lee, G.Y. (Editors). Hmong/Miao in Asia. Chiang Mai, Thailand: Silkworm Books, pp. 129-146.
+%
+%Martha Ratliff. (2004). "Vocabulary of Environment and Subsistence in the Hmong-Mien Protolanguage." In Tapp, N., Michaud, J., Culas, C., and Lee, G.Y. (Editors). Hmong/Miao in Asia. Chiang Mai, Thailand: Silkworm Books, pp. 147-166.
+%
+%Kao-Ly Yang. (2004). "Problems in the Interpretation of Hmong Surnames." In Tapp, N., Michaud, J., Culas, C., and
+%Lee, G.Y. (Editors). Hmong/Miao in Asia. Chiang Mai, Thailand: Silkworm Books, pp. 179-216.
+%
+%Thoj, L. (2000). English-Hmong Dictionary//Tsevlu Aakiv Hmoob. San Diego, CA: Windsor Associates.
+%
+%Thao, Paoze. (1999). Mong Education at the crossroads. Lanham. Md.: University Press of America.
+%
+%Thao, P. (1999). "Mong Linguistic Awareness for Classroom Teachers." In Asian-American Education: Prospects and Challenges. C.C. Park and M.M. Chi, Editors. Westport, CT: Bergin and Harvey. 237-262.
+%
+%Vaj, K. and C. Thoj. (1998). Tsevlu Hmoob (Hmong Dictionary). San Diego, CA: Windsor Associates.
+%
+%Jaisser, Annie & Ratliff, Martha. (1995). Hmong for beginners . Berkeley: Centers for South and Southeast Asia
+%Studies, University of California at Berkeley. (text and audio cassette)
+%
+%Bisang, W. (1993). “Classifiers, Quantifiers, and Class Nouns in Hmong.” Studies in Language 17, no. 1: 1-51.
+%
+%Feng, P.Z. (1993). Hmong-Chinese Dictionary. Publisher Not Available.
+%
+%Riddle, E.M. (1993). “The Relative Marker Uas in Hmong.” Linguistics of the Tibeto-Burman Area 16 (Fall 1993): 57-68.
+%
+%Xiong, L., Xiong, W.J. and N.L.Xiong, Comps, eds. (1992). English-Mong Dictionary. Milwaukee: Xiong Partnership
+%Productions.
+%
+%Blake, J. and D. Yang. (1992). Hmong for English Speakers (Level 1). Minneapolis, World Bridge Associates.
+%
+%Bright, W. (1992). “Hmong Njua – Syntactic Analysis of a Spoken Language Using Data-Processing Equipment and Comparative Linguistic Descriptions of Southeast Asian Languages.” Language. 68(1): 165-171.
+%
+%McKibben, B. (1992). English-White Hmong Dictionary. Provo, UT: Brian McKibben.
+%
+%Ratliff, M. (1992). Meaningful Tone: A Study of Tonal Morphology In Compounds, Form Classes, and Expressive
+%Phrases in White Hmong. Dekalb: Center for Southeast Asian Studies, Northern Illinois University.
+%
+%Jarkey, N. (1991). Serial Verbs in White Hmong: A Functional Approach. PhD Dissertation, University of Sydney.
+%
+%Li, C. (1991). “The Aspectual System of Hmong.” Studies in Language 15: 25-58.
+%
+%Melton, J.B. (1991). An Analysis of Hmong Noun Classifiers. Master’s Thesis, San Diego State University.
+%
+%Ratliff, M. (1991). “Cov, the Underspecified Noun and Syntactic Flexibility in Hmong.” Journal of the American
+%Oriental Society 111: 694-703. Wells, B.B. (1991). The Effect of Speaking the Tonal Language Hmong on
+%Kindergarten Children’s Singing Accuracy.” Master’s Thesis, University of St. Thomas.
+%
+%Jaisser, A. (1990). “Delivering an Introduction to Psycho-Collocations with SIAB in White Hmong.” Linguistics of the
+%Tibeto-Burman Area 13 (Spring 1990): 159-178.
+%
+%Lyman, T. A. (1990). “The Mong (Green Miao) and Their Language: A Brief Compendium.” The Journal of the Siam
+%Society 78: 63-65.
+%
+%Smalley, W.A., Vang, C.K. and G.Y. Yang. (1990). Mother of Writing: The Origin and Development of a Hmong
+%Messianic Script. Chicago: The University of Chicago Press.
+%
+%Vang, C.K., Yang, G.Y., and W.M. Smalley. (1990). The Life of Shong Lue Yang: Hmong ‘Mother of Writing’//Keeb
+%Kwm Soob Lwj Yaj: “Hmoob Niam Ntawv”. Southeast Asian Refugee Occasional Papers, Number 9. Minneapolis, MN: Southeast Asian Refugee Studies, Center for Urban and Regional Studies, University of Minnesota.
+%
+%Li, C. (1989). “The Origin and Function of Switch Reference in Green Hmong.” In Language Change: Contributions
+%to the Study of Its Causes, edited by L.E. Breivik and E.H. Jahr, 115-129. Berlin: Mouton de Gruyter, 1989.
+%
+%Riddle, E.M. (1989). “Serial Verbs and Propositions in White Hmong.” Linguistics of the Tibeto-Burman Area 12 (Fall 1989): 1-13.
+%
+%Riddle, E.M. (1989). “Parataxis in White Hmong.” Working Papers in Linguistics 39 (December 1990): 65-76.
+%
+%Stolurow, L.M. (1989). Primary Word Book: English-Hmong. 2nd Edition. Iowa City, Iowa: The Center for Educational Experimentation, Development and Evaluation, University of Iowa.
+%
+%Te, H.D. (1988). English-Hmong Bilingual Glossary of School Terminology. Rancho Cordova, CA: Southeast Asia
+%Community Resource Center, Folsom Cordova Unified School District.
+%
+%Fuller, J.W. (1987). “Topic Markers in Hmong.” Linguistics of the Tibeto Burman Area 10 (Fall 1987): 113-127.
+%
+%Huffman, M.K. (1987). “Measures of Phonation Type in Hmong.” Acoustical Society of America. Journal 81 (February 1987): 495-504.
+%
+%Jaisser, A. (1987). “Hmong Classifiers: A Problem Set.” Linguistics of the Tibeto-Burman Area 10 (Fall 1987): 169-
+%176.
+%
+%Jarkey, N. (1987). “An Investigation of Two Alveolar Stop Consonants in White Hmong.” Linguistics of the Tibeto-
+%Burman Area 13 (Spring 1987): 159-178.
+%
+%Johns, B and D. Strecker (1987). “Lexical and Phonological Sources of Hmong Elaborate Expressions.” Linguistics of the Tibeto-Burman Area 10 (fall 1987): 106-112.
+%
+%Lyman, T.A. (1987). “The Word Nzi in Green Hmong (Miao).” Linguistics of the Tibeto-Burman Area 10 (Fall 1987):
+%142-143.
+%
+%Ratliff, M. (1987). “Tone Sandhi Compounding in White Hmong.” Linguistics of the Tibeto-Burman Area 10 (Fall
+%1987): 71-105.
+%
+%Strecker, D. (1987). “The Hmong-Mien Languages.” Linguistics of the Tibeto-Burman Area 10 (Fall 1987): 1-11.
+%
+%Strecker, D. (1987). “Some Comments on Benedict’s `Miao-Yiao’ Enigma: Addendum.” Linguistics of the Tibeto-
+%Burman Area 10 (Fall 1987): 22-42.
+%
+%Downing, B.T. (1986). “Language Issues.” In The Hmong in Transition, ed. by G.L. Hendricks, B.T. Downing and A.S. Deinard, 187-193.
+%
+%Jaisser, A.C. (1986). “The Morpheme ‘Kom’: A First Analysis and Look at Embedding in Hmong.” In The Hmong in
+%Transition, ed. by G.L. Hendricks, B.T. Downing, and A.S. Deinard, 245-260.
+%
+%Johns, B. (1986). "An Introduction to White Hmong Sung Poetry." In The Hmong World, Editors, Brenda Johns and
+%David Strecker, New Haven, CT: Council on Southeast Asia Studies, pp. 5-11.
+%
+%Lee. G.Y. (1986). "White Hmong Kinship Terminology and Structure." In The Hmong World, Editors, Brenda Johns
+%and David Strecker, New Haven, CT: Council on Southeast Asia Studies, pp. 12-32.
+%
+%Owensby, L. (1986). “Verb Serialization in Hmong.” In The Hmong in Transition, ed. by G.L. Hendricks, B.T. Downing and A.S. Deinard, 237-43.
+%
+%Ratliff, M. (1986). “An Analysis of Some Tonally Diffferentiated Doublets in White Hmong (Miao).” Linguistics of the
+%Tibeto-Burman Area 9 (Fall 1986): 1-33.
+%
+%Ratliff, M. (1986). The Morphological Functions of Tone in White Hmong. PhD Dissertation, University of Chicago.
+%
+%Ratliff, M. (1986). “Two-Word Expressives in White Hmong.” In The Hmong in Transition, ed. by G.L. Hendricks, B.T.
+%Downing, and A.S. Deinard, 219-236.
+%
+%Downing, B.T. and J.W. Fuller (1985). “Hmong Names: Change and Variation in a Bilingual Context.” Minnesota
+%Papers in Linguistics and Philosophy of Language 10 (April 1985): 39-50.
+%
+%Fuller, J.W. (1985). “On the Passive Construction in Hmong.” Minnesota Papers in Linguistics and Philosophy of
+%Language 10 (April 1985): 51-65.
+%
+%Fuller, J.W. (1985). “Zero Anaphora and Topic Prominence in Hmong.” In the Hmong in Transition, ed. by G.L.
+%Hendricks, B.T. Downing, and A.S. Deinard, 261-277.
+%
+%Fuller, Judith Wheaton (1985). Topic And Comment In Hmong (Southeast Asia, China, Thailand, Vietnam), PhD
+%dissertation. University of Minnesota.
+%
+%Huffman, M.K. (1985). “Measures of Phonation Type in Hmong.” University of California Working Papers in Phonetics 61 (July 1985): 1-25. Los Angeles: University of California.
+%
+%Pederson, E.W. (1985). Intensive and Expressive Language in White Hmong (Hmoob Dawb). Master’s Thesis,
+%University of California, Berkeley.
+%
+%Smalley, W.A. (1985). “Adaptive Language Strategies of the Hmong: From Asian Mountains to American Ghettoes.”
+%Language Sciences 7 (October 1985): 241-269.
+%
+%Vang, K., Vang, H.T., Simmons, C., Tashima, N., and D.T. Ramirez. (1985). Hmong Concepts of Illness and Healing
+%with a Hmong/English Glossary. Prepared for the Office of Refugee Resettlement, U.S. Department of Health and
+%Human Services, Washington D.C. Fresno, CA: Nationalities Service of Central California.
+%
+%Jaisser, A.C. (1984). Complementation in Hmong. Master’s Thesis, San Diego State University.
+%
+%Bessac, S. (1982). The Significance of a New Script for the Hmong. (Unpublished).
+%
+%Catlin, Amy (1982). Speech Surrogate Systems of the Hmong: From Singing Voices to Talking Reeds. In The Hmong in the West: Observations and Reports. Bruce T. Downing and Douglas P. Olney, eds. pp. 170-199. Minneapolis: Center for Urban and Regional Affairs, University of Minnesota.
+%
+%Clark, M. (1982). Some Auxiliary Verbs in Hmong. In the Hmong in the West: Observations and Reports. Bruce T.
+%Downing and Douglas P. Olney eds., pp. 125-141. Minneapolis: Center for Urban and Regional Affairs, University of Minnesota.
+%
+%Derrick-Mescua, M. et al. (1982). Some Secret Languages of the Hmong. In the Hmong in the West: Observations
+%and Reports. B.T. Downing and D.P. Olney, eds. pp. 142-159. Minneapolis: Center for Urban and Regional Affairs,
+%University of Minnesota.
+%
+%Donnelly, N.D. (1982). Preliminary Study of Noun Classifier Use in the Hmong Language. Department of
+%Anthropology, University of Washington (Unpublished).
+%
+%Johns, B. and D. Strecker (1982). Aesthetic Language in White Hmong. In the Hmong in the West: Observations and Reports. B.T. Downing and D.P. Olney, eds., pp. 160-169. Minneapolis: Center for Urban and Regional Affairs,
+%University of Minnesota.
+%
+%Guthrie, S. (1981). Some Observations on Language Universals and Promononialization in English and Hmong.
+%(Unpublished).
+%
+%Shimizu, M. (1981). Shimizu Illustrated Dictionary: English-Hmong. Hopkins, MN: St. Jerome’s Center.
+%
+%Strecker, D. (1981). Classification of Hmongic Languages. (Unpublished).
+%
+%Thao, C. Translator and Adaptor (1981). English-Hmong Phrasebook with Useful Wordlist. Washington D.C.: Center for Applied Linguistics.
+%
+%Yang, D. (1981). Notions sur la langue Hmong. (Unpublished).
+%
+%Clark, M. (1980). Source Phrases in White Hmong (Laos). Working Papers in Linguistics, University of Hawaii at
+%Manoa 12(2): 1-49.
+%
+%Clark, M. (1980). Derivation between Goal and Source Verbs in Hmong. Working Papers in Linguistics, University of Hawaii at Manoa 12(2): 51-59.
+%
+%Locketz, L., Martin, R. and M. Yang. (1980). Hmong-English Phrasebook for Americans. St. Paul: St. Paul Public
+%Schools.
+%
+%Vang, T.F. (1980). Lao Hmong Medical Terms. Governors Center for Asian Assistance, State of Illinois.
+%
+%Yang, D. (1980). Dictionnaire Francaise-Hmong Blanc. Paris: Comite National d’Entraide.
+%
+%Clark, M. (1979). Coverbs: Evidence for the Derivation of Prepositions from Verbs, New Evidence from Hmong.
+%Working Papers in Linguistics, University of Hawaii at Manoa 11(2).
+%
+%Clark, M. (1979). Synchronically Derived Prepositions in Diachronic Perspective: Some Evidence from Hmong.
+%Unpublished paper presented at the 12th International Conference on Sino-Tibetan Languages and Linguistics,
+%Paris, October 19-21.
+%
+%English-Hmong Phrasebook (1979). Unpublished.
+%
+%Heimbach, E.E. (1979). White Hmong-English Dictionary. Southeast Asia Program Data Paper No. 75. Ithaca, New
+%York: Cornell University.
+%
+%Lyman, T.A. (1979). Grammar of Mong Njua (Green Miao): A Descriptive Linguistic Study. Published by the Author.
+%Wang, F. (1979). The Comparison of Initials and Finals of Miao Dialects. The Research Institute of Nationalities,
+%Chinese Academy of Social Sciences.
+%
+%Lyman, Thomas A. (1978). Note on the Name “Green Miao.” Nachrichten 123:82-87.
+%
+%Mottin, J. (1978). Elements de Grammaire Hmong Blanc. Bangkok: Don Bosco Press.
+%
+%Chang, B.S. and K.Chang. (1976). The Prenasalized Stop Initials of Miao-Yiao, Tibeto-Burman, and Chinese: A
+%Result of Diffusion or Evidence of a Genetic Relationship? Academic Sinica: Bulletin of the Institute of History and
+%Philology 47(3): 467-502.
+%
+%Chang, K. (1976). Proto-Miao Initials. Academia Sinica: Bulletin of the Institute of History and Philology 47(2): 155-
+%218.
+%
+%Smalley, W.A. (1976). The Problems of Consonants and Tone: Hmong (Meo, Miao). In Phonemes and Orthography:
+%Language Planning in Ten Minority Languages of Thailand, William Smalley, ed. pp. 85-123. Canberra, Australia:
+%Linguistic Circle of Canberra.
+%
+%Smalley, W.A. (1976). Review of Thomas A. Lyman’s Dictionary of Mong Njua, a Miao (Meo) Language of Southeast
+%Asia. Linguistics 174: 107-112.
+%
+%Smalley, W.A. ed. (1976). Phonemes and Orthography: Language Planning in Ten Minority Languages of Thailand.
+%Pacific Linguistic Series C, No. 43. Canberra, Australia: Linguistic Circle of Canberra.
+%
+%Lyman, T.A. Dictionary of Mong Njua, A Miao (Meo) Language of Southeast Asia. The Hague: Mouton.
+%
+%Chang, K. (1973). The Reconstruction of Proto-Miao-Yao Tones. Academia Sinica: Bulletin of the Institute of History
+%and Philology 44(4): 541-628.
+%
+%Matisoff, J.A. (1973). Tonogenesis in Southeast Asia. In Cosononant Types and Tone. Larry Hyman, ed., pp. 71-95.
+%Southern California Occasional Papers in Linguistics, No. 1. Los Angeles: Linguistics Program, University of
+%Southern California.
+%
+%Benedict, Paul K. (1972). Sino-Tibetan: A Conspectus. Cambridge, England: The University Press. [495 B434]
+%
+%Haudricourt, A.G. (1972). Two-Way and Three-Way Splitting of Tonal Systems in some Far Eastern Languages. In
+%Tai Phonetics and Phonology. J.G. Harris and R.B. Noss, ed. pp. 58-86. Bangkok: Central Institute of English
+%Language.
+%
+%Purnell, H.C. (1972) Toward Contrastive Analysis Between Thai and Hill Tribe Languages. In Tai Phonetics and
+%Phonology J.G Harris and R.B. Noss, ed. pp. 113-129. Bangkok: Central Institute of English Language.
+%
+%Purnell, H.C. ed. (1972). Miao and Yao Linguistic Studies: Selected Articles in Chinese, translated by C. Yu-hung
+%and C. Kwo-Ray. Southeast Asia Program Data Paper No. 88. Ithaca, New York: Cornell University.
+%
+%Smalley, W.A. (1972). Problems in Writing Thailand Minority Languages in Thai Script. In Tai Phonetics and
+%Phonology, J.G. Harris and R.B. Noss, eds., pp. 131-136. Bangkok: Central Institute of English.
+%
+%Haudricourt, A.G. (1971). Les langues Karen et les langues Miao-Yiao. Asie du Sud-Est et Monde Insulinden, Paris 2(4): 25-52.
+%
+%Kwan, J.C. (1971). C’hing Chiang Miao Phonology. Tsing Hua Journal of Chinese Studies (new series) 9: 289-305.
+%
+%Oshima, S. (1971). Preliminary Study on a Black Miao Dialect: Phonology. The Annual Report on Cultural Science
+%28: 27-48.
+%
+%Lyman, T. (1970). English-Meo Pocket Dictionary. Bangkok, Thailand: The German Cultural Institute.
+%
+%Purnell, H.C. (1970). Toward a Reconstruction of Proto-Miao-Yao. PhD Dissertation, Cornell University.
+%
+%Deaton, Brady, and Thomas A. Lyman (1969). Green Miao (Meo) Agricultural Terms. Asia Aakhanee: Southeast
+%Asian Survey 1(3):42-47.
+%
+%Lyman, T.A. The Particle ‘le’ in Green Miao. Asia Aakhanee: Southeast Asian Survey 1(1): 1-14.
+%
+%Lyman, T.A. (1969). Green Miao (Meo) Proverbs. Asia Aakhanee: Southeast Asian Survey 192): 30-32.
+%
+%Worthington, H.R. (1969). A Sampling of Loan Words in Green Miao. Asia Aakhanee: Southeast Asian Survey 1(2):
+%15-17.
+%
+%Vidal, Jules (1969) Noms vernaculaires de plantes (Lao, Meo, Kha) en usage au Laos. Bulletin de l’Ecole francaise d’Extreme Orient 49(2):560-62.
+%
+%Lombard, S.J. comp. (1968). Yao-English Dictionary. Southeast Asia Program Data Paper No. 69. Ithaca, New York:
+%Cornell University.
+%
+%Chang, K. (1967). National Languages. In Current Trends in Linguistics, Vol. 2, Linguistics in East Asia and
+%Southeast Asia, Thomas Sebeok, ed. pp. 151-176. The Hague: Mouton.
+%
+%Downer, G.B. (1967). Tone Change and Tone Shift in White Miao. Bulletin of the School of Oriental and African
+%Studies, University of London 30: 589-599.
+%
+%Moody, W. (1967). List of Irregularities of Coorespondence Existing Between Blue and White Meo Dialects, with texts in Blue and White Meo (Unpublished).
+%
+%Chang, K. (1966). A Comparative Study of the Yao Tone System. Language 42(2): 303-310.
+%
+%Haudricourt, A.G. (1966). The Limits and Connections of Austroasiatic in the Northeast. In Studies in Comparative
+%Austroasiatic Linguistics, N.H. Zide, ed. pp. 44-56. The Hague: Mouton. Kwan, J.C. (1966). A Phonology of a Black
+%Miao Dialect. University of Washington.
+%
+%Nhan, D. (1966). Lai Chau Expands Teaching of Meo Language and Trains More National Minority Teachers. Nhan
+%Dan December 12, 1966. Translated in Translations on North Vietnam, no. 85 (JPRS: 39,478). 1966-67. Washington D.C.: Joint Publications Research Service.
+%
+%Whitelock, D. (1966). White Meo Language Lessons. Chiang Mai: Overseas Missionary Fellowship.
+%
+%Zide, N.H. ed. (1966). Studies in Comparative Austroasiatic Linguistics. (Indo-Iranian Monographs, Vol. 5) The
+%Hague: Mouton.
+%
+%Lyman, T.A. (1965). Excerpts from a Grammar of Green Miao and Green Miao Vocabulary. (Unpublished).
+%
+%Nguyen, K.T. (1965). Problems in Minority Languages and Writing. Translations of Political and Sociological
+%Information on North Vietnam. JPRS: 28,472, January 8, 1965, pp. 31-40.
+%
+%Purnell, H.C. (1965). Phonology of a Yao Dialect Spoken in the Province of Chiengrai Thailand. Unpub M.A. Thesis.
+%Hartford Seminary Foundation.
+%
+%Smalley, W.A. (1965). Hmong Language Notes. Unpublished.
+%
+%Smalley, W.A. (1965). Notes on Hmong Script Development. Unpublished.
+%
+%Bertrais, Yves (1964). Dictionnaire Hmong (meo blanc)-francais. Vientiane: Mission Catholique. [495.17 fB462]
+%
+%Bac, Q. (1963). Script for the Meo Minority. Vietnam 10: 18-19.
+%
+%Downer, G.B. (1963). Chinese, Thai, and Miao-Yiao. In Linguistic Comparison in Southeast Asia and the Pacific. H.L. Shorto, ed. London. School of Oriental and African Studies, University of London.
+%
+%Shorto, H.L. ed. (1963). Linguistics Comparison in Southeast Asia and the Pacific. (Collected Papers in Oriental and African Studies). London: University of London, School of Oriental and African Studies.
+%
+%Shorto, H.L. ed. (1963). Linguistics Comparison in Southeast Asia and the Pacific. (Collected Papers in Oriental and African Studies). London: University of London, School of Oriental and African Studies.
+%
+%Chinese Linguistic Committee (1958). Hmongb-Shuad jianming cidian Chuanqiandian fangyan. (Miao Chinese
+%Dictionary of the Szechuan-Kweichou-Yunnan Dialect).
+%
+%Chinese Linguistic Committee (1958). Hmub-diel jianming cidian Qiandon fangyan. (Miao-Chinese Dictionary of the East Kweichow Dialect).
+%
+%Kroeber, Alfred L. (1958). Miao and Chinese Kin Logic. Academia Sinica: Bulletin of the Institute of History and
+%Philology 29:641-645.
+%
+%Ruey Yih-Fu (1958). Terminological Structure of the Miao Kinship System. Academia Sinica: Bulletin of the Institute
+%of History and Philology 29:613-639.
+%
+%Chang, K. (1957). The Phonemic System of the Yi Miao Dialect. Academic Sinica: Bulletin of the Institute of History
+%and Philology 29(1): 11-19.
+%
+%Ma, H.L. (1957). A Script for the Miao People. China Reconstructs 6/7: 28-30.
+%
+%Shafter, R. (1957). Bibliography of Sino-Tibetan Languages. Wiesbaden: Otto Harrassowitz.
+%
+%Shafer, R. (1955). Classification of the Sino-Tibetan Languages. Word 11: 94-111.
+%
+%Haudricourt, A.G. (1954). Introduction a la phonologie historique des langes miao-yao. Bulletin de l'Ecole Francaise de l'Extreme-Orient 44:555-576.
+%
+%Ruey Yih-Fu (1954). On the Origin and Type of Kinship Terminology among the Miao Tribe in the Region of the
+%Sources of the Yungning River. Bulletin of the Department of Archaeology and Anthropology, National Taiwan
+%University 3:1-13 (in Chinese with English summary).
+%
+%Barney, G. Linwood, and William A. Smalley (1953) (a). Report of Second Conference on Problems in Meo Phonemic Structure. (unpublished)
+%
+%Barney, G. Linwood, and William A. Smalley (1953) (b). Third Report on Meo: Orthography and Grammer.
+%(unpublished)
+%
+%Chang, K. (1953). On the Tone System of the Miao-Yiao Languages. Language 29(3): 374-378.
+
+
+Chenxuan Cui, Katherine Zhang, and David Mortensen. 2022. Learning the Ordering of Coordinate Compounds and Elaborate Expressions in Hmong, Lahu, and 
+David R. Mortensen, Xinyu Zhang, Chenxuan Cui, and Katherine J. Zhang. 2022. A Hmong Corpus with Elaborate Expression Annotations. In Proceedings of t
+https://www.cs.cmu.edu/~dmortens//assets/pdf/mortensen2003hmong.pdf
+
+
+David R. Mortensen. 2019. “Hmong Elaborate Expressions; Constructional and Distributional-
+Semantic Perspectives.” colloquium talk, Carnegie Mellon University, April 19, 2019.
+David R. Mortensen. 2019. “Hmong Elaborate Expressions; Constructional and Distributional-
+Semantic Perspectives.” invited talk, University of Minnesota, Minneapolis, March 29, 2019.
+David R. Mortensen. 2010. “Does Hmong allow noun incorporation? A field study,” colloquium
+talk, University of Pittsburgh, November 19.
+David R. Mortensen. 2010. “Does Hmong allow Noun Incorporation?” invited talk, Wayne State
+University, Detroit, October 1.
+David R. Mortensen. 2010. “Shuijingping Hmong and the problem of tone-vowel interactions,”
+invited talk, the University at Buffalo, February 12.
+David R. Mortensen. 2004. “Scalar Competition and Variables in Hmong Anaphora,” invited talk,
+Stanford Syntax Workshop, Stanford, April 27, 2004. 
+David R. Mortensen. 2003. “The State of
+Hmong Linguistics,” invited talk, Hmong Studies Symposium, Concordia University (St. Paul),
+October 25, 2003.
+
+
+%Fuller cites (a.o.): 
+	%Goral, Donald. Verb concatenation in Southeast Asian languages: a cross-linguistic study. 
+	%Hansell, Mark. Serial verbs and complement constructions in Mandarin: a clause-linkage analysis. 
+	%Johnson, Charles, ed. (1981). Nkauj Ntsuab thiab Sis Nab, level 2. St. Paul: Macalester College.
+	%Johnson, Charles. ed. (1981). Thawj tug tub ua qoob ua loo, level 1. St. Paul: Macalester College.
+	%Li, Charles. (1988). Graamaticization in Hmong: verbs of saying. 21st International Conference on Sino-Tibetan Languages and Linguistics, Lund.
+	%Li, Charles, Bettina Harriehausen, and Donald Litton. (1986). Iconicity: a view from Green Hmong serial verbs. Conference on Southeast Asia as a Linguistic Area, Chicago.
+	%Lis, Nyiajpov. (1986). Lub neel daitaw. Australia: Roojntawv Neejahoob.
+	%Ratliff. Martha. (1986b). The morphological functions of tone in White Hmong. Ph.D. diss., University of Chicago.
+	%Strecker, David and Lopao Vang. (1986). White Hmong dialogues. Minneapolis: Southeast Asian Refugee Studies Project, University of Minnesota
+	%Thoj, Cawv, trans. (1981). Kev tsim neej tshaib hauv Asaeslivkas. Washington, D. C.: Center for Applied Linguistics.
+	%Xiong, Kong. (1980). Hmong-English phrasebook of daily language. Minneapolis: Kong Xiong.
